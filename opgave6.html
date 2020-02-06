@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <section id="data_container"> </section>
+    <template>
+        <article id="dyr">
+
+            <h3></h3>
+            <img src="" alt="">
+            <p>Type: </p>
+            <p>Levested:</p>
+
+        </article>
+    </template>
+
+
+    <script>
+        //        let p1 = document.querySelector("p");
+        // let p2 = document.querySelector("p + p");
+        // let h3 = document.querySelector("h3");
+        // let image = document.querySelector("img");
+        let dyrene = [{
+                "navn": "gris",
+                "type": "pattedyr",
+                "billede": "https://mabe-kea.dk/E19/pics/pig.png",
+                "levested": "svinefarme"
+            },
+            {
+                "navn": "frø",
+                "type": "pattedyr",
+                "billede": "https://mabe-kea.dk/E19/pics/frog.png",
+                "levested": "sumpen"
+            },
+            {
+                "navn": "ræv",
+                "type": "rovdyr",
+                "billede": "https://mabe-kea.dk/E19/pics/fox.png",
+                "levested": "skoven"
+            },
+            {
+                "navn": "sild",
+                "type": "pattedyr",
+                "billede": "http://www.naturporten.dk/cache/com_zoo/images/sild_b65d67582bb29a9263fe9db7707ebaf4.jpg",
+                "levested": "havet"
+            },
+            {
+                "navn": "krokodille",
+                "type": "rovdyr",
+                "billede": "http://mabe-kea.dk/E19/pics/kroko.png",
+                "levested": "sumpen"
+            }
+
+        ]
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            const container = document.querySelector("#data_container");
+            const dyreTemplate = document.querySelector("template");
+            dyrene.forEach(dyr => {
+                let klon = dyreTemplate.cloneNode(true).content;
+                klon.querySelector("h3").textContent = dyr.navn;
+                klon.querySelector("p").textContent += dyr.type;
+                klon.querySelector("p + p").textContent += dyr.levested;
+                klon.querySelector("img").src = dyr.billede;
+
+                container.appendChild(klon);
+
+            })
+        }
+
+        //        p.innerHTML = `navn: ${dyr[0].navn} type: ${dyr[0].type} billede: ${dyr[0].billede} levested: ${dyr[0].levested}<br>`
+        // p.innerHTML += `navn: ${dyr[1].navn} type: ${dyr[1].type} billede: ${dyr[1].billede} levested: ${dyr[1].levested}<br>`
+        // p.innerHTML += `navn: ${dyr[2].navn} type: ${dyr[2].type} billede: ${dyr[2].billede} levested: ${dyr[2].levested}<br>`
+        // p.innerHTML += `navn: ${dyr[3].navn} type: ${dyr[3].type} billede: ${dyr[3].billede} levested: ${dyr[3].levested}<br>`
+        // p.innerHTML += `navn: ${dyr[4].navn} type: ${dyr[4].type} billede: ${dyr[4].billede} levested: ${dyr[4].levested}`
+    </script>
+</body></html>

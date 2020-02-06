@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <p></p>
+    <script>
+        let p = document.querySelector("p");
+        let dyr = [{
+                "navn": "gris",
+                "type": "pattedyr",
+                "billede": "http://mabe-kea.dk/E19/pics/pig.png",
+                "levested": "svinefarme"
+            },
+            {
+                "navn": "frø",
+                "type": "pattedyr",
+                "billede": "http://mabe-kea.dk/E19/pics/frog.png",
+                "levested": "sumpen"
+            },
+            {
+                "navn": "ræv",
+                "type": "rovdyr",
+                "billede": "http://mabe-kea.dk/E19/pics/fox.png",
+                "levested": "skoven"
+            },
+            {
+                "navn": "sild",
+                "type": "pattedyr",
+                "billede": "http://mabe-kea.dk/E19/pics/sild.png",
+                "levested": "havet"
+            },
+            {
+                "navn": "krokodille",
+                "type": "rovdyr",
+                "billede": "http://mabe-kea.dk/E19/pics/kroko.png",
+                "levested": "sumpen"
+            },
+
+        ]
+        p.innerHTML = `navn: ${dyr[0].navn} type: ${dyr[0].type} billede: ${dyr[0].billede} levested: ${dyr[0].levested}<br>`
+        p.innerHTML += `navn: ${dyr[1].navn} type: ${dyr[1].type} billede: ${dyr[1].billede} levested: ${dyr[1].levested}<br>`
+        p.innerHTML += `navn: ${dyr[2].navn} type: ${dyr[2].type} billede: ${dyr[2].billede} levested: ${dyr[2].levested}<br>`
+        p.innerHTML += `navn: ${dyr[3].navn} type: ${dyr[3].type} billede: ${dyr[3].billede} levested: ${dyr[3].levested}<br>`
+        p.innerHTML += `navn: ${dyr[4].navn} type: ${dyr[4].type} billede: ${dyr[4].billede} levested: ${dyr[4].levested}`
+
+    </script>
+</body>
+
+</html>
